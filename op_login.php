@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . '/config/config.php');
-
-echo "Ruta> ".__DIR__;
+require_once('/config/config.php');
+// require_once(__DIR__ . '/config/config.php');
+// echo "Ruta> ".__DIR__;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
