@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $response = $_POST['g-recaptcha-response'];
     
     // Verificar que la respuesta de reCAPTCHA no esté vacía
-    if (false || empty($response)) {
+    if (false && empty($response)) {
         header('Location: login.php?error=3'); // Redirigir si no se completó el reCAPTCHA
         exit;
     }
