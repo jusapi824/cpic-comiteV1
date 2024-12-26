@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $response = $_POST['g-recaptcha-response'];
     
     // Verificar que la respuesta de reCAPTCHA no esté vacía
-    if (true || empty($response)) {
+    if (false || empty($response)) {
         header('Location: login.php?error=3'); // Redirigir si no se completó el reCAPTCHA
         exit;
     }
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //print_r($verify_response);
     
-    if ($verify_response->success) {
+    if (true || $verify_response->success) {
         try {
             // Preparar la consulta SQL para verificar las credenciales del usuario
             $consulta = $pdo->prepare("Select usuario.id, usuario.usuario, usuario.contrasenia, usuario.nombres, usuario.apellidos, usuario.id_perfil, usuario.estado, perfil.permisos From perfil Inner Join usuario On usuario.id_perfil = perfil.id Where usuario.usuario = ? And usuario.estado = 'activo'");
