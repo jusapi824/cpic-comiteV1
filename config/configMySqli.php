@@ -3,16 +3,16 @@ $environment = 'production';
 
 if ($environment == 'development') {
     // Para conexiones 
-    $servername = "localhost";
-    $username = "root";  // Usuario de MySQL en XAMPP (por defecto es "root")
-    $password = "";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
-    $dbname = "comite";
+    $host = "localhost";
+    $usuario_db = "root";  // Usuario de MySQL en XAMPP (por defecto es "root")
+    $contrasenia_db = "";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
+    $nombre_db = "comite";
 } else {
     // Para conexiones 
-    $servername = "sena_cpic-comitev1-mysql";
-    $username = "mysql";  // Usuario de MySQL en XAMPP (por defecto es "root")
-    $password = "9359cb67a17cb22b7010";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
-    $dbname = "sena";
+    $host = "sena_cpic-comitev1-mysql";
+    $usuario_db = "mysql";  // Usuario de MySQL en XAMPP (por defecto es "root")
+    $contrasenia_db = "9359cb67a17cb22b7010";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
+    $nombre_db = "sena";
 }
 
 $conn = new mysqli($host, $usuario_db, $contrasenia_db, $nombre_db);
