@@ -1,6 +1,6 @@
 <?php
 // Definir los valores para la conexión
-require_once('../config/configMySqli.php');
+require_once('config/configMySqli.php');
 
 // Consulta para obtener los registros (ajusta esto si es necesario)
 $sql = "SELECT * FROM informes";

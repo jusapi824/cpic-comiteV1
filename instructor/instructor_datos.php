@@ -1,10 +1,10 @@
 <?php
 
-require_once('../config/configMySqli.php');
+require_once('../config/configPDO.php');
 
 // Consulta para obtener los registros (ajusta esto si es necesario)
 $sql = "SELECT * FROM instructor";
-$result = $conn->query($sql);
+$result = $pdo->query($sql);
 
 // Mostrar los resultados en una tabla
 if ($result->num_rows > 0) {
@@ -36,7 +36,7 @@ echo "</tr>";
 }
 
 // Cerrar la conexión
-$conn->close();
+$pdo->close();
 ?>
 
 
