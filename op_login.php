@@ -1,5 +1,5 @@
 <?php
-require_once('../config/configPDO.php');
+require_once('config/configPDO.php');
 // require_once(__DIR__ . '/config/config.php');
 // echo "Ruta> ".__DIR__;
 
