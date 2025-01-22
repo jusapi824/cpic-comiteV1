@@ -37,8 +37,6 @@ if (!isset($_SESSION['id'])) {
     <?php include('config/head.php');
     $perfil = $_SESSION['id_perfil'];
     ?>
-
-
 </head>
 
 <body id="page-top">

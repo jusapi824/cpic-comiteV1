@@ -24,10 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si todos los campos están completos
     if ($nombres && $apellidos && $celular && $tipo_documento && $documento && $correo_electronico && $id_grupo && $jornada &&$programa_formacion  && $estado) {
         // Preparar la consulta para insertar los datos en la base de datos
-        $stmt = $conn->prepare("INSERT INTO aprendiz (nombres, apellidos, celular, tipo_documento, documento, correo_electronico, id_grupo, jornada,programa_formacion, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+        $stmt = $conn->prepare("INSERT INTO aprendiz (nombres, apellidos, celular, tipo_documento, documento, correo_electronico, id_grupo, jornada,programa_formacion, estado, fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?)");
         
+        $fechaCreacion = 0;
+        $fechaActualizacion = 0;
+        $usuarioCrea = "";
+        $usuarioActualiza = "";
         // Vincular los parámetros correctamente (todos como strings, excepto celular que puede ser numérico)
-        $stmt->bind_param( 'ssssssssss',$nombres, $apellidos, $celular,  $tipo_documento, $documento, $correo_electronico, $id_grupo, $jornada, $programa_formacion,$estado);
+        $stmt->bind_param( 'ssssssssssssss',$nombres, $apellidos, $celular,  $tipo_documento, $documento, $correo_electronico, $id_grupo, $jornada, $programa_formacion,$estado, $fechaCreacion,$fechaActualizacion,$usuarioCrea,$usuarioActualiza);
 
         // Ejecutar la consulta e informar el resultado
         if ($stmt->execute()) {
