@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Preparar la consulta para insertar los datos en la base de datos
         $stmt = $conn->prepare("INSERT INTO aprendiz (nombres, apellidos, celular, tipo_documento, documento, correo_electronico, id_grupo, jornada,programa_formacion, estado, fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?)");
         
-        $fechaCreacion = 0;
-        $fechaActualizacion = 0;
+        $fechaCreacion = date("aaaa-mm-dd");
+        $fechaActualizacion = date("aaaa-mm-dd");
         $usuarioCrea = "";
         $usuarioActualiza = "";
         // Vincular los parámetros correctamente (todos como strings, excepto celular que puede ser numérico)
