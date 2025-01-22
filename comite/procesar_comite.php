@@ -1,5 +1,5 @@
 <?php
-require_once('../config/config.php');
+require_once('../config/configMySqli.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -11,13 +11,6 @@ $fecha_inicio =htmlspecialchars ($_POST['fecha_inicio'], ENT_QUOTES, 'UTF-8');
 $fecha_fin = htmlspecialchars ($_POST['fecha_fin'], ENT_QUOTES, 'UTF-8');
 $lugar = htmlspecialchars ($_POST['lugar'], ENT_QUOTES, 'UTF-8');
 
-// Crear la conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "comite");
-
-// Verifica si hay error en la conexión
-if ($conn->connect_error) {
-    die("Error en la conexión: " . $conn->connect_error);
-}
 
 // Obtener los datos de los aprendices de la tabla informe
 $query = "SELECT correo_aprendiz, nombre_aprendiz FROM informe WHERE id_grupo = ?";

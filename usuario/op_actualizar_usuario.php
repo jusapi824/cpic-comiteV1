@@ -1,6 +1,6 @@
 <?php
-require_once('../config/config.php');
 session_start(); // Asegúrate de que la sesión esté iniciada
+require_once('../config/configPDO.php');
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

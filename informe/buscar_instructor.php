@@ -1,5 +1,5 @@
 <?php
-require_once('../config/config.php'); 
+require_once('../config/configPDO.php'); 
 
 if (isset($_GET['documento'])) {
     $documento = $_GET['documento'];

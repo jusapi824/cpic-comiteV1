@@ -1,8 +1,8 @@
 <?php
-require_once('../config/config.php');
-
 // Iniciar sesión
 session_start();
+require_once('../config/configMySqli.php');
+
 
 // Verificar si el usuario tiene permisos para acceder a esta página
 if (!isset($_SESSION['id_perfil']) || $_SESSION['id_perfil'] != 1) {

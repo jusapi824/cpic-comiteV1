@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . '/config/config.php');
 
 session_start();
+require_once(__DIR__ . '/config/configPDO.php');
 
 // Verificar si el usuario tiene permisos para acceder a esta página
 if ($_SESSION['permisos'] !== '3') {

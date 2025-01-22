@@ -1,5 +1,5 @@
 <?php
-require_once('../config/config.php');
+require_once('../config/configMySqli.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

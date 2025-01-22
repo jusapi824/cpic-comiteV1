@@ -1,5 +1,6 @@
 <?php
-require_once(__DIR__ . '/config/config.php');
+// require_once(__DIR__ . '/config/config.php');
+require_once('config/configMySqli.php');
 require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;

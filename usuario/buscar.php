@@ -1,17 +1,5 @@
 <?php
-// Definir los valores para la conexión
-$servername = "localhost";
-$username = "root";  // Usuario de MySQL en XAMPP (por defecto es "root")
-$password = "";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
-$dbname = "comite";  // Cambia por el nombre de tu base de datos
-
-// Crear la conexión a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require_once('../config/configMySqli.php');
 
 // Obtener el valor de búsqueda de forma segura
 $buscar = isset($_GET['buscar']) ? $conn->real_escape_string($_GET['buscar']) : '';

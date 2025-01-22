@@ -1,16 +1,8 @@
 <?php
 // Definir los valores para la conexión
-require_once('../config/config.php');
-// Verificar la conexión
 session_start();
-
-// Crear la conexión a la base de datos
-
-
+require_once('../config/configMySqli.php');
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 // Si se envió el formulario de edición
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

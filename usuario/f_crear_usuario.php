@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos (ajusta los parámetros según tu configuración)
-require_once('../config/config.php');
+require_once('../config/configPDO.php');
 
 // Consulta para obtener los perfiles de la base de datos
 $consulta_perfiles = $pdo->query("SELECT id, perfil FROM perfil");

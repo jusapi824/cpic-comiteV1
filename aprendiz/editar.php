@@ -1,11 +1,6 @@
 <?php
 // Definir los valores para la conexión
-require_once('../config/config.php');
-// Verificar la conexión
-session_start();
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require_once('../config/configMySqli.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibir los datos del formulario

@@ -5,7 +5,7 @@ session_start();
 // Verifica si el ID de perfil está definido en la sesión
 if (isset($_SESSION['perfil'])) {
     // Incluye el archivo de configuración de la base de datos
-    require_once(__DIR__ . '/config/config.php');
+    require_once(__DIR__ . '/config/configPDO.php');
 
     try {
         // Prepara y ejecuta la consulta para obtener el nombre del perfil

@@ -1,7 +1,7 @@
 <?php
-require_once('../config/config.php');
-
 session_start();
+require_once('../config/configPDO.php');
+
 
 if ($_SESSION['id_perfil'] == 1 && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'];

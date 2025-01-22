@@ -1,7 +1,7 @@
 <?php
-// Incluir la configuración de la base de datos
-require_once('../config/config.php');
 session_start();
+// Incluir la configuración de la base de datos
+require_once('../config/configPDO.php');
 // Verificar si los datos del formulario fueron enviados
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recibir los datos del formulario

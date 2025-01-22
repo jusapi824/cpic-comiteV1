@@ -2,7 +2,7 @@
 require '../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require_once('../config/config.php');
+require_once('../config/configMySqli.php'); 
 
 session_start();
 // Verificar si se enviaron los datos del formulario

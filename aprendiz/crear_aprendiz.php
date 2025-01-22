@@ -1,22 +1,11 @@
 <?php
+session_start();
 $mensaje = "";
 $mensajeTipo = ""; // 'success' o 'error'
 
 // Datos de conexión
-$servername = "localhost";
-$username = "root";  
-$password = "";  
-$dbname = "comite";  
+require_once('../config/configMySqli.php');
 
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-session_start();
 
 // Procesar el formulario cuando se envíe (método POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -1,8 +1,8 @@
 <?php
-// Conexión a la base de datos
-require_once('../config/config.php');
-
 session_start();
+// Conexión a la base de datos
+require_once('../config/configMySqli.php');
+
 // Verificar si se ha pasado el parámetro 'id' para editar el registro
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Obtener los datos del formulario

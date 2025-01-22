@@ -1,24 +1,6 @@
 <?php
 
-$host = 'sena_cpic-comitev1-mysql';
-$nombre_db = 'sena';
-$usuario_db = 'mysql';
-$contrasenia_db = '9359cb67a17cb22b7010';
-
-// Definir los valores para la conexión
-// $servername = "localhost";
-// $username = "root";  // Usuario de MySQL en XAMPP (por defecto es "root")
-// $password = "";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
-// $dbname = "comite";  // Cambia por el nombre de tu base de datos
-
-
-// Crear la conexión a la base de datos
-$conn = new mysqli($host, $usuario_db, $contrasenia_db, $nombre_db);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require_once('../config/configMySqli.php');
 
 // Consulta para obtener los registros (ajusta esto si es necesario)
 $sql = "SELECT * FROM instructor";

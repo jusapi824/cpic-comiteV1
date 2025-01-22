@@ -1,17 +1,5 @@
 <?php
-// Definir los valores para la conexión
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "comite";
-
-// Crear la conexión a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require_once('../config/configMySqli.php');
 
 // Verificar si se ha pasado el parámetro 'documento' para eliminar el registro
 if (isset($_GET['documento'])) {

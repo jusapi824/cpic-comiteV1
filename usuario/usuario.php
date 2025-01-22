@@ -1,7 +1,7 @@
 <?php
-require_once('../config/config.php');
-
 session_start();
+require_once('../config/configPDO.php');
+
 
 // Verifica si el usuario está autenticado
 if (!isset($_SESSION['id'])) {

@@ -1,15 +1,9 @@
 <?php
+require_once('../config/configMySqli.php'); 
 // Verificar si se recibió el parámetro 'id'
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']); // Sanitizar el ID recibido
-
-    // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "comite";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    
     $conn->set_charset("utf8mb4");
 
     // Verificar conexión

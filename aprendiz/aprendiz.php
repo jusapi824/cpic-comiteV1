@@ -1,6 +1,4 @@
 <?php
-require_once('../config/config.php');
-
 session_start();
 
 // Verifica si el usuario está autenticado

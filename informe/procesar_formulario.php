@@ -4,19 +4,8 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';  // Asegúrate de tener PHPMailer instalado con Composer
 
-// Datos de conexión
-$servername = "localhost";
-$username = "root";  // Usuario de MySQL en XAMPP (por defecto es "root")
-$password = "";  // Contraseña de MySQL (por defecto en XAMPP es vacía)
-$dbname = "comite";  // Cambia por el nombre de tu base de datos
 
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require_once('../config/configMySqli.php');
 
 // Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
