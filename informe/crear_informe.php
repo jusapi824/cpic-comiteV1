@@ -28,10 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Consulta para insertar los datos en la base de datos
-    $query = "INSERT INTO informe (fecha_informe, documento_aprendiz, nombre_aprendiz, correo_aprendiz, programa_formacion, id_grupo, reporte, documento_instructor, nombre_instructor, correo_instructor, estado) 
-              VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT INTO informe (fecha_informe, documento_aprendiz, nombre_aprendiz, correo_aprendiz, programa_formacion, id_grupo, reporte, documento_instructor, nombre_instructor, correo_instructor, estado,fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza) 
+              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
    $stmt = mysqli_prepare($conn, $query);
-   mysqli_stmt_bind_param($stmt, 'sssssssssss', $fecha_informe, $documento_aprendiz, $nombre_aprendiz, $correo_aprendiz, $programa_formacion, $id_grupo, $reporte, $documento_instructor, $nombre_instructor, $correo_instructor, $estado);
+   $fechaCreacion = date("Y-m-d");
+        $fechaActualizacion = date("Y-m-d");
+        $usuarioCrea = "";
+        $usuarioActualiza = "";
+        
+   mysqli_stmt_bind_param($stmt, 'sssssssssssssss', $fecha_informe, $documento_aprendiz, $nombre_aprendiz, $correo_aprendiz, $programa_formacion, $id_grupo, $reporte, $documento_instructor, $nombre_instructor, $correo_instructor, $estado,$fechaCreacion,$fechaActualizacion,$usuarioCrea,$usuarioActualiza);
    if (mysqli_stmt_execute($stmt)) {
        $id_informe = mysqli_insert_id($conn);
 
