@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $fechaCreacion = date("Y-m-d");
         $fechaActualizacion = date("Y-m-d");
-        $usuarioCrea = "";
+        $usuarioCrea = $_SESSION['id'];
         $usuarioActualiza = "";
         // Vincular los parámetros correctamente (todos como strings, excepto celular que puede ser numérico)
         $stmt->bind_param( 'ssssssssssssss',$nombres, $apellidos, $celular,  $tipo_documento, $documento, $correo_electronico, $id_grupo, $jornada, $programa_formacion,$estado, $fechaCreacion,$fechaActualizacion,$usuarioCrea,$usuarioActualiza);

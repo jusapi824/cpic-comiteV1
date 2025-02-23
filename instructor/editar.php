@@ -14,12 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estado = $_POST['estado'];
     $documento = $_POST['documento'];
 
+    $fechaActualizacion = date("Y-m-d");
+    $usuarioActualiza = $_SESSION['id'];;
+
     // Actualizar los datos en la base de datos
-    $update_sql = "UPDATE instructor SET nombres = ?, apellidos = ?, celular = ?, correo_electronico = ?, estado = ? WHERE documento = ?";
+    $update_sql = "UPDATE instructor SET nombres = ?, apellidos = ?, celular = ?, correo_electronico = ?, estado = ?,fecha_actualizacion =?, usuario_actualiza =? WHERE documento = ?";
     $update_stmt = $conn->prepare($update_sql);
 
     // Asegúrate de pasar todos los parámetros en el orden correcto
-    $update_stmt->bind_param("ssssss", $nombres, $apellidos, $celular, $correo_electronico, $estado, $documento);
+    $update_stmt->bind_param("ssssssss", $nombres, $apellidos, $celular, $correo_electronico, $estado, $fechaActualizacion , $usuarioActualiza, $documento);
 
     if ($update_stmt->execute()) {
 

@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $stmt = mysqli_prepare($conn, $query);
    $fechaCreacion = date("Y-m-d");
         $fechaActualizacion = date("Y-m-d");
-        $usuarioCrea = "";
+        $usuarioCrea = $_SESSION['id'];
         $usuarioActualiza = "";
         
    mysqli_stmt_bind_param($stmt, 'sssssssssssssss', $fecha_informe, $documento_aprendiz, $nombre_aprendiz, $correo_aprendiz, $programa_formacion, $id_grupo, $reporte, $documento_instructor, $nombre_instructor, $correo_instructor, $estado,$fechaCreacion,$fechaActualizacion,$usuarioCrea,$usuarioActualiza);
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->isHTML(true);
             // Asegúrate de que las variables tienen valores asignados antes de usarlas
             $mailContent = "
-            <h2>Notificación de Informe: <strong>#{$id_informe}</strong> </h2>
+            <h2>Notificación de Informe: <strong>#{$id}</strong> </h2>
             <p>Estimado(a) <strong>{$nombre_aprendiz}</strong>, Con número de cédula <strong>{$documento_aprendiz}</strong>, del grupo <strong>{$id_grupo}</strong> y programa de formación <strong>{$programa_formacion}</strong>, usted ha sido notificado por <strong>{$reporte}</strong> por el instructor <strong>{$nombre_instructor}</strong>. Por favor, esté atento al agendamiento del comité.</p>
             ";
 
