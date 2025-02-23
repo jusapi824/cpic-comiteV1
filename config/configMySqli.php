@@ -1,5 +1,5 @@
 <?php
-$environment = 'development'; 
+$environment = 'production'; 
 
 if ($environment == 'development') {
     // Para conexiones 
