@@ -25,12 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $fechaActualizacion = date("Y-m-d");
     $usuarioActualiza = $_SESSION['id'];
-    ;
-
-
-
-
-    //print_r($_POST);
 
     if (
         $fecha_informe && $documento_aprendiz && $nombre_aprendiz && $correo_aprendiz && $programa_formacion &&
