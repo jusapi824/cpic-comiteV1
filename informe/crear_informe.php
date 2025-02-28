@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->isHTML(true);
             // Asegúrate de que las variables tienen valores asignados antes de usarlas
             $mailContent = "
-            <h2>Notificación de Informe: <strong>#{$id}</strong> </h2>
+            <h2>Notificación de Informe: <strong>#{$id_informe}</strong> </h2>
             <p>Estimado(a) <strong>{$nombre_aprendiz}</strong>, Con número de cédula <strong>{$documento_aprendiz}</strong>, del grupo <strong>{$id_grupo}</strong> y programa de formación <strong>{$programa_formacion}</strong>, usted ha sido notificado por <strong>{$reporte}</strong> por el instructor <strong>{$nombre_instructor}</strong>. Por favor, esté atento al agendamiento del comité.</p>
             ";
 
