@@ -14,7 +14,7 @@ $perfil = $_SESSION['id_perfil'];
             <li><a href="../comite/comite.php" class="text-white hover:bg-green-600 p-2 rounded">Agendamiento Comite</a>
             </li>
         <?php endif; ?>
-        <li><a href="../Aprendiz/aprendiz.php" class="text-white hover:bg-green-600 p-2 rounded">Administrar
+        <li><a href="../aprendiz/aprendiz.php" class="text-white hover:bg-green-600 p-2 rounded">Administrar
                 Aprendices</a></li>
         <li><a href="../informe/informe.php" class="text-white hover:bg-green-600 p-2 rounded">Notificaciones</a></li>
         </li>
