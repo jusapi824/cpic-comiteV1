@@ -17,7 +17,7 @@
                 <!-- Container Fluid-->
                 <div class="container-fluid" id="container-wrapper">
                     <!-- Aquí irá el contenido dinámico -->
-                    <?php include('../instructor/instructor.php'); ?>
+                    <?php include('instructor/instructor.php'); ?>
                 </div>
                 <!-- Container Fluid-->
             </div>
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Scroll to top -->
-    <?php include('../config/toTop.php'); ?>
-    <?php include('../config/scripts.php'); ?>
+    <?php include('config/toTop.php'); ?>
+    <?php include('config/scripts.php'); ?>
 </body>
 </html>

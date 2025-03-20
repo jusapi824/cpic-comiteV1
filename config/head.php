@@ -9,4 +9,4 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/ruang-admin.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>

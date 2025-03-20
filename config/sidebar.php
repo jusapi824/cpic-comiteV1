@@ -1,9 +1,11 @@
 <!-- sidebar.php -->
 <?php
 $perfil = $_SESSION['id_perfil'];
+
 ?>
 <div id="sidebar"
     class="bg-green-600 text-white w-64 h-full fixed left-0 top-0 p-4 transform -translate-x-full transition-all duration-300 ease-in-out">
+    <!-- <a href="" class="text-xl font-semibold text-center text-white"></a><img src="../img/logo/sena.png" alt=""> -->
     <a href="" class="text-xl font-semibold text-center text-white"></a><img src="../img/logo/sena.png" alt="">
     <ul class="space-y-2 mt-4">
         <?php if ($perfil != 2): ?>

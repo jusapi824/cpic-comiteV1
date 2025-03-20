@@ -42,12 +42,12 @@ if (!isset($_SESSION['id'])) {
 <body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
-        <?php include('config/sidebar.php'); ?>
+        <?php include('config/sidebarDashboard.php'); ?>
         <!-- Sidebar -->
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <!-- TopBar -->
-                <?php include('config/topbar.php'); ?>
+                <?php include('config/topbarDashboard.php'); ?>
                 <!-- Topbar -->
 
                 <!-- Container Fluid-->
@@ -58,30 +58,30 @@ if (!isset($_SESSION['id'])) {
                         <!-- Tarjeta 1 - Instructores -->
                         <?php if ($perfil != 2): ?>
                         <div class="w-60 h-72 bg-green-100 shadow-xl rounded-lg flex flex-col items-center p-4 transition transform hover:scale-105 hover:shadow-2xl cursor-pointer"
-                            onclick="window.location.href='../instructor/instructor.php'">
-                            <img src="../img/instructor.png" alt="Actas" class="w-32 h-32 mb-4">
+                            onclick="window.location.href='instructor/instructor.php'">
+                            <img src="img/instructor.png" alt="Actas" class="w-32 h-32 mb-4">
                             <p class="text-green-700 font-bold">Instructores</p>
                         </div>
                         <?php endif; ?>
                        
                         <!-- Tarjeta 2 - Aprendices -->
                         <div class="w-60 h-72 bg-green-100 shadow-xl rounded-lg flex flex-col items-center p-4 transition transform hover:scale-105 hover:shadow-2xl cursor-pointer"
-                            onclick="window.location.href='../aprendiz/aprendiz.php'">
-                            <img src="../img/aprendiz.png" alt="Actas" class="w-32 h-32 mb-4">
+                            onclick="window.location.href='aprendiz/aprendiz.php'">
+                            <img src="img/aprendiz.png" alt="Actas" class="w-32 h-32 mb-4">
                             <p class="text-green-700 font-bold">Aprendices</p>
                         </div>
                        
                         <!-- Tarjeta 3 - Notificación -->
                         <div class="w-60 h-72 bg-green-100 shadow-xl rounded-lg flex flex-col items-center p-4 transition transform hover:scale-105 hover:shadow-2xl cursor-pointer"
-                            onclick="window.location.href='../informe/informe.php'">
-                            <img src="../img/notificacion1.png" alt="Notificación" class="w-32 h-32 mb-4">
+                            onclick="window.location.href='informe/informe.php'">
+                            <img src="img/notificacion1.png" alt="Notificación" class="w-32 h-32 mb-4">
                             <p class="text-green-700 font-bold">Notificación</p>
                         </div> 
                         <?php if ($perfil != 2): ?>
                         <!-- Tarjeta 4 - Agendamiento -->
                         <div class="w-60 h-72 bg-green-100 shadow-xl rounded-lg flex flex-col items-center p-4 transition transform hover:scale-105 hover:shadow-2xl cursor-pointer"
-                            onclick="window.location.href='../comite/comite.php'">
-                            <img src="../img/agenda.png" alt="Agendamiento" class="w-32 h-32 mb-4">
+                            onclick="window.location.href='comite/comite.php'">
+                            <img src="img/agenda.png" alt="Agendamiento" class="w-32 h-32 mb-4">
                             <p class="text-green-700 font-bold">Agendamiento Comite</p>
                         </div>
                         <?php endif; ?>

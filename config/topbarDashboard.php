@@ -23,7 +23,7 @@ if (!isset($_SESSION['nombres']) || !isset($_SESSION['apellidos'])) {
     <ul class="flex items-center space-x-4">
         <li class="relative">
             <a href="#" class="text-white text-lg flex items-center space-x-2" id="userMenuButton">
-                <img src="../img/boy.png" alt="Profile Picture" class="w-8 h-8 rounded-full">
+                <img src="img/boy.png" alt="Profile Picture" class="w-8 h-8 rounded-full">
                 <span class="hidden lg:inline text-sm">
                     <?php echo htmlspecialchars($_SESSION['nombres'] . ' ' . $_SESSION['apellidos']); ?>
                 </span>
@@ -32,10 +32,10 @@ if (!isset($_SESSION['nombres']) || !isset($_SESSION['apellidos'])) {
             <div id="userMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
                 <ul class="py-2">
                     <li>
-                        <a href="../mi_perfil.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hidden">Mi Perfil</a>
+                        <a href="mi_perfil.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hidden">Mi Perfil</a>
                     </li>
                     <li>
-                        <a href="../op_logout.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Cerrar Sesión</a>
+                        <a href="op_logout.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
