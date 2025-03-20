@@ -1,6 +1,6 @@
 <?php
 
-$environment = 'development';
+$environment = 'production';
 
 if ($environment == 'development') {
     $host = 'localhost';
