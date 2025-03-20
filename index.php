@@ -8,13 +8,14 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 ?>
+<!-- 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Página de Inicio</title>
 </head>
 <body>
-    <h2>Bienvenido, <?php echo $_SESSION['nombres'] . " " . $_SESSION['apellidos']; ?></h2>
+    <h2>Bienvenido, <?php //echo $_SESSION['nombres'] . " " . $_SESSION['apellidos']; ?></h2>
     <p>Este es el contenido de la página de inicio.</p>
     <ul>
         <li><a href="perfil.php">Administrar Perfiles</a></li>
@@ -23,7 +24,7 @@ if (!isset($_SESSION['id'])) {
         <li><a href="op_logout.php">Cerrar Sesión</a></li>
     </ul>
 </body>
-</html>
+</html> -->
 
 
 
