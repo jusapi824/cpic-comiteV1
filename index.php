@@ -1,7 +1,4 @@
-<!-- 
-
 <?php
-// Inicia la sesión (asegúrate de que session_start() esté en todas las páginas protegidas)
 session_start();
 
 // Verifica si el usuario está autenticado
@@ -26,7 +23,7 @@ if (!isset($_SESSION['id'])) {
         <li><a href="op_logout.php">Cerrar Sesión</a></li>
     </ul>
 </body>
-</html> -->
+</html>
 
 
 
