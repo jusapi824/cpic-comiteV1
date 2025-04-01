@@ -7,7 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
     $contrasenia = $_POST['contrasenia'];
 
-    $secret_key = '6Le9RZgqAAAAALAiX042-EAHs2a-qoy-aWkVg2PT'; // Reemplaza con tu clave secreta de reCAPTCHA
+    // $secret_key = '6Le9RZgqAAAAALAiX042-EAHs2a-qoy-aWkVg2PT'; // Reemplaza con tu clave secreta de reCAPTCHA
+    $secret_key = '6Lc_6QUrAAAAALnrgBRalDpD3f4EHyaMmc-2igZI'; // Reemplaza con tu clave secreta de reCAPTCHA
     $response = $_POST['g-recaptcha-response'];
     
     // Verificar que la respuesta de reCAPTCHA no esté vacía
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //print_r($verify_response);
     
-    if (true || $verify_response->success) {
+    if ($verify_response->success) {
         try {
             // Preparar la consulta SQL para verificar las credenciales del usuario
             $consulta = $pdo->prepare("Select usuario.id, usuario.usuario, usuario.contrasenia, usuario.nombres, usuario.apellidos, usuario.id_perfil, usuario.estado, perfil.permisos From perfil Inner Join usuario On usuario.id_perfil = perfil.id Where usuario.usuario = ? And usuario.estado = 'activo'");
