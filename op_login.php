@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $contrasenia = $_POST['contrasenia'];
 
     // $secret_key = '6Le9RZgqAAAAALAiX042-EAHs2a-qoy-aWkVg2PT'; // Reemplaza con tu clave secreta de reCAPTCHA
-    $secret_key = '6Lc_6QUrAAAAALnrgBRalDpD3f4EHyaMmc-2igZI'; // Reemplaza con tu clave secreta de reCAPTCHA
+    $secret_key = '6Lf07gUrAAAAAFXxv9eUDKh37XNrw0VcDuxtotV_'; // Reemplaza con tu clave secreta de reCAPTCHA
     $response = $_POST['g-recaptcha-response'];
     
     // Verificar que la respuesta de reCAPTCHA no esté vacía
