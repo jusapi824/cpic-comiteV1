@@ -45,16 +45,17 @@ if (isset($_GET['id'])) {
         $pdf->Image('../img/sena.png', 20, 15, 15); // Ajusta la ruta y tamaño según tu logo}
 
         $pdf->SetFont('Arial', 'B', 14);
-        $pdf->Cell(0, 10, utf8_decode('SERVICIO NACIONAL DE APRENDIZAJE SENA '), 0, 1, 'C'); 
+
+        $pdf->Cell(0, 10, mb_convert_encoding('SERVICIO NACIONAL DE APRENDIZAJE SENA ', "ISO-8859-1", "UTF-8"), 0, 1, 'C'); 
         $pdf->Ln(5); // Salto de línea
 
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 10, utf8_decode('CENTRO DE PROCESOS INDUSTRIALES Y DE LA CONSTRUCCION'), 0, 1, 'C'); 
+        $pdf->Cell(0, 10, mb_convert_encoding('CENTRO DE PROCESOS INDUSTRIALES Y DE LA CONSTRUCCION', "ISO-8859-1", "UTF-8"), 0, 1, 'C'); 
         $pdf->Ln(10); // Salto de línea
 
         // Título con estilo
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 10, utf8_decode('INFORME PARA COMITE DE EVALUACION Y SEGUIMIENTO'), 0, 1, 'C'); 
+        $pdf->Cell(0, 10, mb_convert_encoding('INFORME PARA COMITE DE EVALUACION Y SEGUIMIENTO', "ISO-8859-1", "UTF-8"), 0, 1, 'C'); 
         $pdf->Ln(10); // Salto de línea
 
         // Datos del informe
