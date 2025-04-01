@@ -69,17 +69,17 @@ if (isset($_GET['id'])) {
         $pdf->Cell(0, 10, $row['fecha_informe'], 1, 1, 'L'); // Borde
         $pdf->Cell(50, 10, 'Documento Aprendiz:', 1, 0, 'L'); // Borde
         $pdf->Cell(0, 10, $row['documento_aprendiz'], 1, 1, 'L'); // Borde
-        $pdf->Cell(50, 10, utf8_decode('Nombre Aprendiz:'), 1, 0, 'L'); // Borde
-        $pdf->Cell(0, 10, utf8_decode($row['nombre_aprendiz']), 1, 1, 'L'); // Borde
+        $pdf->Cell(50, 10, mb_convert_encoding('Nombre Aprendiz:', "ISO-8859-1", "UTF-8"), 1, 0, 'L'); // Borde
+        $pdf->Cell(0, 10, mb_convert_encoding($row['nombre_aprendiz'], "ISO-8859-1", "UTF-8"), 1, 1, 'L'); // Borde
         $pdf->Cell(50, 10, 'Correo Aprendiz:', 1, 0, 'L'); // Borde
         $pdf->Cell(0, 10, $row['correo_aprendiz'], 1, 1, 'L'); // Borde
 
         // Sección Programa
         $pdf->Ln(5);
         $pdf->SetFillColor(230, 230, 230);
-        $pdf->Cell(0, 10, utf8_decode( 'Información del Programa'),0, 1, 'C', true);
+        $pdf->Cell(0, 10, mb_convert_encoding( 'Información del Programa', "ISO-8859-1", "UTF-8"),0, 1, 'C', true);
         $pdf->Ln(3);
-        $pdf->Cell(50, 10, utf8_decode('Programa Formación:'), 1, 0, 'L'); // Borde
+        $pdf->Cell(50, 10, mb_convert_encoding('Programa Formación:', "ISO-8859-1", "UTF-8"), 1, 0, 'L'); // Borde
         $pdf->Cell(0, 10, $row['programa_formacion'], 1, 1, 'L'); // Borde
         $pdf->Cell(50, 10, 'ID Grupo:', 1, 0, 'L'); // Borde
         $pdf->Cell(0, 10, $row['id_grupo'], 1, 1, 'L'); // Borde
@@ -93,7 +93,7 @@ if (isset($_GET['id'])) {
         $pdf->Cell(0, 10, $row['documento_instructor'], 1, 1, 'L'); // Borde
         $pdf->Cell(50, 10, 'Nombre Instructor:',
          1, 0, 'L'); // Borde
-        $pdf->Cell(0, 10, utf8_decode($row['nombre_instructor']), 1, 1, 'L'); // Borde
+        $pdf->Cell(0, 10, mb_convert_encoding($row['nombre_instructor'], "ISO-8859-1", "UTF-8"), 1, 1, 'L'); // Borde
         $pdf->Cell(50, 10, 'Correo Instructor:', 1, 0, 'L'); // Borde
         $pdf->Cell(0, 10, $row['correo_instructor'], 1, 1, 'L'); // Borde
         
@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
         $pdf->SetFillColor(230, 230, 230);
         $pdf->Cell(0, 10, 'Reporte', 0, 1, 'C', true);
         $pdf->Ln(3);
-        $pdf->MultiCell(0, 10, utf8_decode($row['reporte']), 1, 'L'); // Borde
+        $pdf->MultiCell(0, 10, mb_convert_encoding($row['reporte'], "ISO-8859-1", "UTF-8"), 1, 'L'); // Borde
 
         // Sanitizar nombre y documento para evitar problemas con caracteres especiales en el nombre del archivo
 $nombre_aprendiz_limpio = preg_replace('/[^a-zA-Z0-9_]/', '_', $row['nombre_aprendiz']);
