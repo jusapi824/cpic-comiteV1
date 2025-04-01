@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Insertar el comité en la base de datos
-    $query = "INSERT INTO comite (fecha_inicio, fecha_fin, lugar, observacion, estado) VALUES (?, ?, ?, ?, ?)";
+    $query = "INSERT INTO comite (fecha_inicio, fecha_fin, lugar, observacion, estado,fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza) VALUES (?, ?, ?, ?, ?,?,?,?,?)";
     $stmt = mysqli_prepare($conn, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, 'sssss', $fecha_inicio, $fecha_fin, $lugar, $observacion, $estado);
+        mysqli_stmt_bind_param($stmt, 'sssssssss', $fecha_inicio, $fecha_fin, $lugar, $observacion, $estado,$fechaCreacion, $fechaActualizacion, $usuarioCrea, $usuarioActualiza);
         if (mysqli_stmt_execute($stmt)) {
             $id_comite = mysqli_insert_id($conn);
 
