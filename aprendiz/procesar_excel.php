@@ -10,8 +10,10 @@ if (isset($_FILES['archivo_excel']) && $_FILES['archivo_excel']['error'] == UPLO
 
     // Verifica que el archivo sea Excel
     $tipoArchivo = $_FILES['archivo_excel']['type'];
-    if ($tipoArchivo !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' &&
-        $tipoArchivo !== 'application/vnd.ms-excel') {
+    if (
+        $tipoArchivo !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' &&
+        $tipoArchivo !== 'application/vnd.ms-excel'
+    ) {
         $_SESSION["mensaje"] = "El archivo cargado no es un archivo Excel válido.";
         header('Location: aprendiz.php');
         exit();
@@ -38,8 +40,16 @@ if (isset($_FILES['archivo_excel']) && $_FILES['archivo_excel']['error'] == UPLO
             $estado = $fila[9];
 
             // Insertar en la base de datos
-            $stmt = $conn->prepare("INSERT INTO aprendiz (tipo_documento, documento, nombres, apellidos, celular, correo_electronico, estado, id_grupo, programa_formacion,jornada,fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza)) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?)");
-            $stmt->bind_param("ssssssssssssss", $tipo_documento,$documento, $nombres, $apellidos, $celular, $correo_electronico, $estado,$id_grupo, $programa_formacion,$jornada,$fechaCreacion,$fechaActualizacion,$usuarioCrea,$usuarioActualiza);
+            $stmt = $conn->prepare("INSERT INTO aprendiz (tipo_documento, documento, nombres, apellidos, celular, correo_electronico, estado, id_grupo, programa_formacion,jornada,fecha_creacion, fecha_actualizacion, usuario_crea, usuario_actualiza) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)");
+
+            $fechaCreacion = date("Y-m-d");
+            $fechaActualizacion = date("Y-m-d");
+            $usuarioCrea = $_SESSION['id'];
+            $usuarioActualiza = "";
+            $stmt->bind_param("ssssssssssssss", $tipo_documento, $documento, $nombres, $apellidos, $celular, $correo_electronico, $estado, $id_grupo, $programa_formacion, $jornada, $fechaCreacion, $fechaActualizacion, $usuarioCrea, $usuarioActualiza);
+
+
+
 
             // Ejecutar la consulta
             if (!$stmt->execute()) {
