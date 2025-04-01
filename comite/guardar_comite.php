@@ -65,10 +65,11 @@ $mail->ContentType = 'text/html; charset=UTF-8';
 foreach ($informe_aprendices as $aprendiz) {
     $aprendiz = json_decode($aprendiz, true);
     $id_informe = $aprendiz['id'];
+    $fechaCreacion = date("Y-m-d");
 
-    $query_asignar = "INSERT INTO comite_informe (id_comite, id_informe) VALUES (?, ?)";
+    $query_asignar = "INSERT INTO comite_informe (id_comite, id_informe, fecha_asignación) VALUES (?, ?, ?)";
     $stmt_asignar = mysqli_prepare($conn, $query_asignar);
-    mysqli_stmt_bind_param($stmt_asignar, 'is', $id_comite, $id_informe);
+    mysqli_stmt_bind_param($stmt_asignar, 'iss', $id_comite, $id_informe, $fechaCreacion);
     mysqli_stmt_execute($stmt_asignar);
 
     try {
